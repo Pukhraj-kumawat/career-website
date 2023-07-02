@@ -1,0 +1,21 @@
+     {% for job in jobs %}
+      
+      <div class="job-preview">        
+        <div class="job_title-div">
+         {{job['Job-title']}} 
+        </div> 
+        <div class="location-div">
+          <b>Location:</b> {{job['Location']}}
+        </div>
+        {% if 'Salary' in job %}
+        <div class="salary-div">
+          <b>Salary:</b> {{job['Salary']}}
+        </div>
+        {% endif %}
+      </div>
+      <div class="Apply-button-div">
+        <button class="Apply-button">
+          Apply
+        </button>
+      </div>
+       {% endfor %}  

@@ -12,20 +12,80 @@
         margin-top:0px;
       }
       .image{
-        width:100%;
+        width:90%;
         height:200px;
-        margin-top:-20px;
+        margin:-20px 0px;
       }
       h2{
         font-size:32px;
         font-family:roboto,arial;
         color:rgb(100,100,100);
         font-weight:normal;
+        margin-top:60px;
       }
       p{
         font-family:roboto,arial;
         color:rgb(80,80,80);
       }
+      .paragraph-div{
+        margin:0px 160px;
+        text-align:left;
+        font-family:roboto,arial;
+
+      }
+      .open-positions-div{
+        margin:0px 160px 50px 160px;
+        text-align:left;
+        font-family:roboto,arial;
+        font-size:20px;
+        display:grid;
+        grid-template-columns:4fr 1fr;
+        .job-preview{
+
+          
+          .job_title-div{
+            padding:5px 0px;
+            color:gray;
+          }
+          .location-div ,
+          .salary-div{
+            font-size:15px;
+            font-family:roboto,arial;
+          }
+        }
+        .Apply-button-div{
+          .Apply-button{
+            margin-top:40px;
+            margin-left:50px;
+            padding:6px 12px;
+            background-color:white;
+            color:blue;
+            border-color:rgb(51,102,255);
+            border-style:solid;
+            border-width:1px;
+            border-radius:3px;
+          }
+          .Apply-button:hover{
+            background-color:blue;
+            color:white;
+          }
+          margin: left 30px;    }
+        .job-preview,
+        .Apply-button-div{
+        border-bottom: 1px solid rgb(192,192,192);
+        padding:10px 0;
+          margin-bottom:8px;  
+
+        }
+      }
+        .contact-us-button{
+          padding:8px 16px 8px 16px;
+          border-radius:4px;
+          background-color:rgb(51,102,255);
+          color:white;
+          border:none;
+        }  
+          
     </style>
   </head>
   
@@ -43,15 +103,21 @@
     <p>
 It is a long established fact that a reader will  be         distracted by the readable content of a page when looking   at its layout. The point of using Lorem Ipsum is that it     has a more-or-less normal distribution of letters, as        opposed to using 'Content here, content here', making it     look like readable English.
     </p>
+      
     </div>
+  
     <h2> Open positions</h2>
-    <p> 
-      To do job listing
-    </p>
-    <button> 
+  
+    <div class='open-positions-div'>
+      {% include 'jobitem.html' %} 
+    </div>
+                
+    <button class="contact-us-button"> 
       Contact Us
     </button>
-    
+    <p style="margin-top:100px;">
+      Copyright 2023
+    </p>    
 </div>
 
     
