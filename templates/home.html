@@ -6,10 +6,24 @@
       .entire-div{
         text-align:center;
       }
+      .logo{
+        text-align:left;
+        position:fixed;
+        width: 100%;
+        background-color:white;
+        margin-top:-80px;
+        border-bottom: 1px solid rgb(192,192,192);
+
+
+      }
+      .logo img{
+        width:5%;
+      }
+      
       h1{        
         font-size:80px; 
         color:rgb(50,50,50);
-        margin-top:0px;
+        margin-top:80px;
       }
       .image{
         width:90%;
@@ -34,7 +48,7 @@
 
       }
       .open-positions-div{
-        margin:0px 160px 50px 160px;
+        margin:0px 160px 40px 160px;
         text-align:left;
         font-family:roboto,arial;
         font-size:20px;
@@ -55,15 +69,15 @@
         }
         .Apply-button-div{
           .Apply-button{
-            margin-top:40px;
             margin-left:50px;
-            padding:6px 12px;
+            padding:6px 12px 8px 12px;
             background-color:white;
             color:blue;
             border-color:rgb(51,102,255);
             border-style:solid;
             border-width:1px;
             border-radius:3px;
+            text-decoration:none;
           }
           .Apply-button:hover{
             background-color:blue;
@@ -73,8 +87,9 @@
         .job-preview,
         .Apply-button-div{
         border-bottom: 1px solid rgb(192,192,192);
-        padding:10px 0;
-          margin-bottom:8px;  
+        padding:10px 0 10px 0px;
+          margin-bottom:8px;
+          margin-top:10px;
 
         }
       }
@@ -84,7 +99,11 @@
           background-color:rgb(51,102,255);
           color:white;
           border:none;
+          text-decoration:none;
         }  
+        .contact-us-button:hover{
+            opacity:0.8;
+          }
           
     </style>
   </head>
@@ -92,6 +111,13 @@
 <body style=" height:1000px;">
   
 <div class="entire-div">
+    <div class="logo">
+      <img src="static/logo.png">
+          <div style="text-align:left; font-              family:roboto,arial; font-size:12px; z-index:5;">
+       Jovion career
+      </div>
+    </div>
+
     <h1>
       Jovion career
     </h1>
@@ -104,6 +130,7 @@
 It is a long established fact that a reader will  be         distracted by the readable content of a page when looking   at its layout. The point of using Lorem Ipsum is that it     has a more-or-less normal distribution of letters, as        opposed to using 'Content here, content here', making it     look like readable English.
     </p>
       
+      
     </div>
   
     <h2> Open positions</h2>
@@ -112,9 +139,9 @@ It is a long established fact that a reader will  be         distracted by the r
       {% include 'jobitem.html' %} 
     </div>
                 
-    <button class="contact-us-button"> 
+    <a href="mailto:joviancareer.com?subject=To%20contact%20about%20job%20opening&body=Hello%2C%20I%20wanted%20to%20contact%20about%20opening%20positions%20that%3A%0D%0A" class="contact-us-button"> 
       Contact Us
-    </button>
+    </a>
     <p style="margin-top:100px;">
       Copyright 2023
     </p>    
