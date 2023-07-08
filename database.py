@@ -1,12 +1,14 @@
 from sqlalchemy import create_engine, text
 import os
-db_connection_string=os.environ['DB_CONNECTION_STRING']
+import json
 
-engine = create_engine(db_connection_string,connect_args={
-  "ssl":{
-    "ssl_ca": "/etc/ssl/cert.pem"
-  }
-})
+db_connection_string = os.environ['DB_CONNECTION_STRING']
+
+engine = create_engine(db_connection_string,
+                       connect_args={"ssl": {
+                         "ssl_ca": "/etc/ssl/cert.pem"
+                       }})
+
 
 def load_jobs_from_db():
   # CREATE "LIST" OF all rows of database table with id
@@ -16,8 +18,15 @@ def load_jobs_from_db():
     result_dicts = []
     for row in result.all():
       result_dicts.append(dict(zip(column_names, row)))
-    return (result_dicts)
+    return result_dicts
 
 
-      
-
+def load_job_from_db(id):
+  with engine.connect() as conn:
+    result = conn.execute(text("SELECT * FROM jobs WHERE id = :val"),
+                          {'val': id})
+    row = result.fetchone()
+    try:
+      return row._asdict()
+    except Exception as e:
+      raise e

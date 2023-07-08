@@ -1,0 +1,44 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <title> {{job['Job-title']}}- career website</title> 
+    
+    <style>
+    .job-title{
+      font:roboto,arial;
+      color:rgb(51,51,0);
+    }
+
+     h3{
+       font-size:25px;
+     } 
+    </style>
+
+    
+  </head>
+ 
+    <h3 >Title</h3>
+      <p class="job-title">{{job['Job-title']}}</p>
+    <h3 class="location"> Location</h3>
+      <p>{{job['location']}}</p>
+    <h3 >Currency</h3>
+      <p class="currency"> {{job['currency']}}</p>
+    <h3 >Salary</h3>
+      <p class="salary"> {{job['salary']}}</p>
+    <h3 class="responsibilities">Responsibilities</h3>
+
+        <ul>
+          {% for line in job['responsibilities'].split(",") %}
+            <li>
+                {{line}}
+            </li>
+          {% endfor %}
+          
+        </ul>
+    <h3 >Requirements</h3>
+      <p class="requirements"> {{job['requirements']}}</p> 
+  
+    
+  </body>
+  
+</html>

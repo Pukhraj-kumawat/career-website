@@ -14,8 +14,10 @@
         {% endif %}
       </div>
       <div class="Apply-button-div">
-        <a href="mailto:joviancareer@gmail.com?subject=For%20applying%20to%20position%20{{job['Job-title']}} &body=Hello%2C%20I%20wanted%20to%20apply%20in%20the%20position%20of%20{{job['Job-title']}}%20becuase%3A%0D%0A%0D%0A" target="_blank" class="Apply-button">
+        <a href="/job/{{job['Id']}}" class="Apply-button">
           Apply
         </a>
       </div>
        {% endfor %}  
+
+       
